@@ -1,0 +1,1 @@
+삼성관련 뉴스를 모은  .   text 파일(LLM-newbie)을 한개의 파일로 만들어 input.txt 를 만든다.

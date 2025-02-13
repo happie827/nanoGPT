@@ -29,6 +29,23 @@ from torch.distributed import init_process_group, destroy_process_group
 
 from model import GPTConfig, GPT
 
+
+if torch.cuda.is_available():
+    device_id = torch.cuda.current_device()
+    capability = torch.cuda.get_device_capability(device_id)
+    print(f"CUDA Compute Capability: {capability[0]}.{capability[1]}")
+
+    ### 만약 옛날 버전 GPU(GTX) 라면 아래 설정으로 suppress 해야
+    if capability[0] < 7 :
+        import torch._dynamo
+        torch._dynamo.config.suppress_errors = True
+else:
+    print("No CUDA-compatible GPU detected.")
+
+
+
+
+
 # -----------------------------------------------------------------------------
 # default config values designed to train a gpt2 (124M) on OpenWebText
 # I/O
