@@ -12,5 +12,7 @@ env/
 venv/
 .venv
 out-shakespeare-char
+out-samsungnews-char
+
 
 
