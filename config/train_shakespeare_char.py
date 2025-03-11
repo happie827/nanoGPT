@@ -37,4 +37,4 @@ warmup_iters = 100 # not super necessary potentially
 # compile = False # do not torch compile the model
 
 
-init_from = 'resume' # 'scratch' or 'resume' or 'gpt2*'
+init_from = 'scratch' # 'scratch' or 'resume' or 'gpt2*'
